@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Event Prediction</title>
+</head>
+<body>
+    <h3>Predict Death Event Risk causes by Cardiovascular Disease based on Patient Record </h3>
+    Prediksi berdasarkan kondisi vital pasien apakah pasien memiliki risiko kematian akibat penyakit jantung
+
+    <div>
+        <form action="{{ url_for('predict') }}" method="POST">
+        <input type="text" id="myTextBox1" name="balance" placeholder="Input Balance" required="required" />
+        <br>
+        <input type="text" id="myTextBox1" name="balance_frq" placeholder="Input Balance Frequency" required="required" >
+        <br>
+        <input type="text" id="myTextBox1" name="purchases" placeholder="Input Purchases Amount" required="required" >
+        <br>
+        <input type="text" id="myTextBox1" name="oneoff_purchases" placeholder="Input ONEOFF Purchases Amount" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="installment_purchases" placeholder="Input Installment Purchases Amount" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="cash_advance" placeholder="Input Cash Advance Amount" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="purchases_frq" placeholder="Input Purchases Frequency" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="oneoff_purchases_frq" placeholder="Input ONEOFF Purchases Frequency" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="installment_purchases_frq" placeholder="Input Installment Purchases Frequency" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="cash_advance_frq" placeholder="Input Cash Advance Frequency" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="cash_advance_trx" placeholder="Input Number of Cash Advance Transaction" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="purchases_trx" placeholder="Input Number of Purchases Transaction" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="credit_limit" placeholder="Input Credit Limit Amount" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="payments" placeholder="Input Payment Amount" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="minimum_payments" placeholder="Input Minimum Payments Amount" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="prc_full_payments" placeholder="Input Percentage of Full Payments" required="required">
+        <br>
+        <input type="text" id="myTextBox1" name="tenure" placeholder="Input Tenure" required="required">
+        <br>
+        <button type="submit" >Predict</button>
+    </form>
+    <p class="message">{{ prediction_text }}</p>
+    </div>
+</body>
+</html>
