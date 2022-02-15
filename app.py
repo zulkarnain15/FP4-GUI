@@ -7,11 +7,11 @@ import pickle
 
 app = Flask(__name__)
 model = pickle.load(open('models/kmeans_model.pkl', 'rb'))
-scaler = pickle.load(open('models/regression.pkl', 'rb'))
+scaler = pickle.load(open('models/scaler.pkl', 'rb'))
 
 @app.route("/")
 def home():
-    return render_template("main.html")
+    return render_template("index.html")
 
 @app.route("/predict", methods=['POST'])
 def predict():
@@ -41,20 +41,7 @@ def predict():
 
     val_predict = model.predict(val)
 
-    if val_predict == 0:
-        output = 'Pengguna termasuk ke dalam klaster {}, dengan karakteristik\nPengguna dengan limit kredit kecil dan melakukan transaksi pembayaran dan pembelian cukup sering'.format(val_predict)
-    elif val_predict == 1:
-        output = 'Pengguna termasuk ke dalam klaster {}, dengan karakteristik\nPengguna dengan limit kredit rata-rata dan tidak banyak melakukan transaksi maupun tarik tunai kartu kredit'.format(val_predict)
-    elif val_predict == 2:
-        output = 'Pengguna termasuk ke dalam klaster {}, dengan karakteristik\nPengguna dengan limit kredit tinggi dan menggunakannya untuk transaksi tarik tunai'.format(val_predict)
-    elif val_predict == 3:
-        output = 'Pengguna termasuk ke dalam klaster {}, dengan karakteristik\nPengguna dengan limit kredit paling tinggi dan sering melakukan transaksi baik itu pembelian dan pembayaran ataupun tarik tunai'.format(val_predict)
-    elif val_predict == 4:
-        output = 'Pengguna termasuk ke dalam klaster {}, dengan karakteristik\nPengguna dengan limit kredit tinggi dengan saldo rata-rata dan menggunakannya untuk transaksi pembelian dan pembayaran'.format(val_predict)
-    else:
-        output = 'Pengguna tidak termasuk dalam klaster manapun'
-
-    return render_template('main.html', prediction_text='{}'.format(output))
+    return render_template('predict.html', data=val_predict)
 
 if __name__ == "__main__":
     app.run(debug=True)

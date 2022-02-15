@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+  <title>Credit Card Holder Segmentation</title>
+</head>
+
+<body background="{{url_for('static', filename='img/dust.png')}}">
+  <h1 class="title">Segmentasi Pemegang Kartu Kredit</h1>
+  <div class="predict-form">
+    <p class="sub-title">
+      Perilaku <b>Transaksi</b> Setiap Pemegang Kartu Kredit.
+    </p>
+    <form id="contact" action="{{ url_for('predict') }}" method="POST">
+      <fieldset>
+        <input placeholder="Ketikkan saldo akhir pengguna" name="balance" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan frekuensi &quot; seberapa sering saldo &quot; pengguna diperbarui" name="balance_frq" type="text"
+          tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan jumlah &quot;nominal pembelian&quot; dari akun kartu kredit" name="purchases" type="text" tabindex="3"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan jumlah &quot; maksimal nominal pembelian &quot; dalam satu kali transaksi" name="oneoff_purchases" type="text" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan jumlah &quot; nominal pembelian &quot; dalam cicilan" name="installment_purchases" type="text"
+          tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan jumlah &quot; nominal penarikan &quot; tunai" name="cash_advance" type="text" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan frekuensi seberapa sering pengguna melakukan transaksi pembelian" name="purchases_frq" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan frekuensi seberapa sering pengguna melakukan pembelian dalam satu kali transaksi" name="oneoff_purchases_frq" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan frekuensi seberapa sering pengguna melakukan pembelian dalam cicilan" name="installment_purchases_frq" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan frekuensi seberapa sering pengguna melakukan tarik tunai" name="cash_advance_frq" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Berapa kali pengguna melakukan transaksi dengan layanan tarik tunai?" name="cash_advance_trx" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Berapa kali pengguna melakukan transaksi pembelian?" name="purchases_trx" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan jumlah limit saldo kartu kredit pengguna" name="credit_limit" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan jumlah pembayaran yang dilakukan pengguna" name="payments" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan jumlah nominal minimum pembayaran yang dilakukan pengguna" name="minimum_payments" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Persentase pengguna melakukan pembayaran penuh" name="prc_full_payments" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Ketikkan masa berlaku kartu kredit pengguna" name="tenure" type="text" tabindex="4"
+          required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Prediksi</button>
+      </fieldset>
+    </form>
+    <p class="message">{{ prediction_text }}</p>
+  </div>
+</body>
+
+</html>
