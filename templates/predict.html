@@ -1,32 +1,42 @@
-<html>
-
-<link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+  <title>Document</title>
+</head>
 <body background="{{url_for('static', filename='img/dust.png')}}">
-    <div class="description">
-        <center>
-            <p class="title-keterangan">Hasil Prediksi</p>
+  <div class="description">
+    <center>
+      <p class="title-keterangan">Hasil Prediksi</p>
 
-            {%if data == 0%}
-            <p class="patient-non-risk">Pengguna termasuk ke dalam klaster <b class="non-risk">{{data}}</b> dengan karakteristik Pengguna dengan limit kredit kecil dan melakukan transaksi pembayaran dan pembelian cukup sering</p>
+      {%if data == 0%}
+      <p class="result">Pengguna termasuk ke dalam klaster 0, dengan karakteristik Pengguna dengan limit kredit kecil dan melakukan transaksi pembayaran dan pembelian cukup sering</p> 
 
-            {%elif data == 1%}
-            <p class="patient-have-risk">Pengguna termasuk ke dalam klaster <b class="have-risk">{{data}}</b> dengan karakteristik Pengguna dengan limit kredit rata-rata dan tidak banyak melakukan transaksi maupun tarik tunai kartu kredit</p>
-            {%elif data == 2%}
-            <p class="patient-have-risk">Pengguna termasuk ke dalam klaster <b class="have-risk">{{data}}</b> dengan karakteristik Pengguna dengan limit kredit tinggi dan menggunakannya untuk transaksi tarik tunai</p>
-            {%elif data == 3%}
-            <p class="patient-have-risk">Pengguna termasuk ke dalam klaster <b class="have-risk">{{data}}</b> dengan karakteristik Pengguna dengan limit kredit paling tinggi dan sering melakukan transaksi baik itu pembelian dan pembayaran ataupun tarik tunai</p>
-            {%elif data == 4%}
-            <p class="patient-have-risk">Pengguna termasuk ke dalam klaster <b class="have-risk">{{data}}</b> dengan karakteristik Pengguna dengan limit kredit tinggi dengan saldo rata-rata dan menggunakannya untuk transaksi pembelian dan pembayaran</p>
+      {%elif data == 1%}
+      <p class="result">Pengguna termasuk ke dalam klaster 1, dengan karakteristik Pengguna dengan limit kredit rata-rata dan tidak banyak melakukan transaksi maupun tarik tunai kartu kredit </p>
 
-            {%else%}
-            <p class="patient-have-risk">Pengguna tidak termasuk dalam klaster manapun</p>
-            
-            {%endif%}
-            <br><br>
-            <a href='/' class="kembali">Kembali ke Form Pengisian</a>
-        </center>
-    </div>
+      {%elif data == 2%}
+      <p class="result">Pengguna termasuk ke dalam klaster 2, dengan karakteristik Pengguna dengan limit kredit tinggi dan menggunakannya untuk transaksi tarik tunai</p>
+
+      {%elif data == 3%}
+      <p class="result">Pengguna termasuk ke dalam klaster 3, dengan karakteristik Pengguna dengan limit kredit paling tinggi dan sering melakukan transaksi baik itu pembelian dan pembayaran ataupun tarik tunai</p>
+
+      {%elif data == 4%}
+      <p class="result">Pengguna termasuk ke dalam klaster 4, dengan karakteristik Pengguna dengan limit kredit tinggi dengan saldo rata-rata dan menggunakannya untuk transaksi pembelian dan pembayaran</p>
+
+      {%else%}
+      <p class="result">Pengguna tidak termasuk dalam klaster manapun</p>
+
+      {%endif%}
+
+      <br><br>
+
+      <a href='/' class="kembali">Kembali ke Form Pengisian</a>
+
+    </center>
+  </div>
 </body>
-
 </html>

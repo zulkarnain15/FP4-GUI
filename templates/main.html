@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+  <title>Final Project 4</title>
+</head>
+
+<body background="{{url_for('static', filename='img/dust.png')}}">
+  <p class="title">Customer Segmentation to Define Marketing Strategy</p>
+  
+  <div class="predict-form">
+    <form id="contact" action="{{ url_for('predict') }}" method="POST">
+      <div class="side-left">
+        <fieldset class="label">
+          Balance
+          <input name="balance" type="float" tabindex="1" class="form-input" required autofocus>
+        </fieldset>
+
+        <fieldset class="label">
+          Balance Frequency
+          <input name="balance_frq" type="float" class="form-input" tabindex="2" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Purchases
+          <input name="purchases" type="float" tabindex="3" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          One off Purchases
+          <input name="oneoff_purchases" type="float" tabindex="4" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Installments Purchases
+          <input name="installment_purchases" type="float" tabindex="5" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Cash Advance
+          <input name="cash_advance" type="float" tabindex="6" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Purchases Frequency
+          <input name="purchases_frq" type="float" tabindex="6" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          One off Purchases Frequency
+          <input name="oneoff_purchases_frq" type="float" tabindex="8" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Installments Purchases Frequency
+          <input name="installment_purchases_frq" type="float" tabindex="9" class="form-input" required>
+        </fieldset>
+      </div>
+
+      <div class="side-right">
+        <fieldset class="label">
+          Cash Advance Frequency
+          <input name="cash_advance_frq" type="float" tabindex="10" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Cash Advance Transactions
+          <input name="cash_advance_trx" type="float" tabindex="11" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Purchases Transactions
+          <input name="purchases_trx" type="float" tabindex="12" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Credit Limit
+          <input name="credit_limit" type="float" tabindex="13" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          payments
+          <input name="payments" type="float" tabindex="14" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Minimum Payments  
+          <input name="minimum_payments" type="float" tabindex="15" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          PRC Full Payment
+          <input name="prc_full_payments" type="float" tabindex="16" class="form-input" required>
+        </fieldset>
+
+        <fieldset class="label">
+          Tenure
+          <input name="tenure" type="float" tabindex="17" class="form-input" required>
+        </fieldset>
+      </div>
+
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Prediksi</button>
+      </fieldset>
+    </form>
+    <p class="message">{{ prediction_text }}</p>
+  </div>
+</body>
+
+</html>

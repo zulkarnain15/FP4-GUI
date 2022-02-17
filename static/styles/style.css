@@ -17,41 +17,26 @@
 
 body {
   font-family: Dongle;
-  margin-right: 200px;
-  margin-left: 180px;
+  margin: 0 200px 0 200px;
 }
 
 .title {
-  width: 60%;
-  margin-top: 350px;
-  float: left;
-  text-align: right;
-  padding-right: 40px;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 44px;
+  font-weight: bold;
 }
 
 .predict-form {
-  width: 40%;
-  margin: auto 0;
-  float: right;
-}
-
-#contact input[type="text"],
-#contact input[type="text"],
-#contact input[type="text"],
-#contact input[type="text"],
-#contact input[type="text"],
-#contact input[type="text"],
-#contact input[type="text"],
-#contact textarea,
-#contact button[type="submit"] {
-  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+  width: 100%;
+  padding: 20px 0 20px 0;
 }
 
 #contact {
+  width: 100%;
   background: #F9F9F9;
-  padding: 25px;
+  padding: 0 30px 0 30px;
   border-radius: 10px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 #contact h3 {
@@ -64,14 +49,13 @@ body {
 #contact h4 {
   margin: 5px 0 15px;
   display: block;
-  font-size: 13px;
+  font-size: 19px;
   font-weight: 400;
 }
 
 fieldset {
   border: medium none !important;
-  margin: 0 0 10px;
-  min-width: 100%;
+  margin: 0 0 10px 0;
   width: 100%;
 }
 
@@ -92,20 +76,6 @@ fieldset {
   font-size: 17.5px;
 }
 
-#contact input[type="text"]:hover,
-#contact input[type="text"]:hover,
-#contact input[type="text"]:hover,
-#contact input[type="text"]:hover,
-#contact input[type="text"]:hover,
-#contact input[type="text"]:hover,
-#contact input[type="text"]:hover,
-#contact textarea:hover {
-  -webkit-transition: border-color 0.3s ease-in-out;
-  -moz-transition: border-color 0.3s ease-in-out;
-  transition: border-color 0.3s ease-in-out;
-  border: 1px solid #aaa;
-}
-
 #contact textarea {
   height: 100px;
   max-width: 100%;
@@ -120,7 +90,6 @@ fieldset {
   color: #FFF;
   font-size: 16px;
   border-radius: 5px;
-  margin: 0 0 5px;
   padding: 10px;
   font-size: 15px;
 }
@@ -137,7 +106,7 @@ fieldset {
 }
 
 .copyright {
-  text-align: center;
+  text-align: right;
 }
 
 #contact input:focus,
@@ -170,7 +139,6 @@ h1 {
 }
 
 .sub-title {
-  margin-top: 100px;
   font-size: 30px;
 }
 
@@ -183,35 +151,68 @@ h3 {
 }
 
 .title-keterangan {
+  margin-top: -50px;
   font-size: 70px;
   font-weight: bold;
 }
 
-.patient-non-risk {
+.result {
   border: 1px solid #1db658;
   border-radius: 10px;
-  margin-bottom: -20px;
-}
-
-.patient-have-risk {
-  border: 1px solid #ff0000;
-  border-radius: 10px;
-  margin-bottom: -25px;
-}
-
-.patient-non-risk, .patient-have-risk {
   font-size: 40px;
-}
-
-.non-risk {
+  margin-bottom: -20px;
   color: #1db658;
-}
-
-.have-risk {
-  color: #ff0000;
+  width:100%;
+  text-align: center;
 }
 
 .kembali {
   font-size: 30px;
   text-decoration: none;
+}
+
+.row-balance {
+  text-align: center;
+}
+
+.side-left {
+  float: left;
+  margin-top: 30px;
+}
+
+.side-right {
+  float: right;
+  margin-top: 30px;
+}
+
+.label {
+  font-size: 22px;
+  margin-right: 30px;
+}
+
+.form-input {
+  width: 100px;
+  padding: 10px;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+  float: right;
+}
+
+button {
+  margin: 20px 0 30px 0;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.form-input[type=number]::-webkit-inner-spin-button,
+.form-input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
